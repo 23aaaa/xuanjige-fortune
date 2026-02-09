@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>玄机阁 - 命运之门</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/login.css">
+    <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-header">
+            <div class="logo">
+                <i class="fas fa-yin-yang"></i>
+                <h1>玄机阁</h1>
+                <p class="subtitle">窥探天机 · 解读命运</p>
+            </div>
+        </div>
+        
+        <div class="login-card">
+            <div class="card-header">
+                <h2><i class="fas fa-lock"></i> 命运之门</h2>
+                <p>请输入通行密码进入玄机阁</p>
+            </div>
+            
+            <div class="card-body">
+                <form id="loginForm">
+                    <div class="input-group">
+                        <label for="password"><i class="fas fa-key"></i> 通行密码</label>
+                        <div class="password-input">
+                            <input type="password" id="password" placeholder="请输入四位数字密码" maxlength="4" required>
+                            <button type="button" class="toggle-password" id="togglePassword">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                        <div class="password-hint">
+                            <span class="hint-icon"><i class="fas fa-lightbulb"></i></span>
+                            <span class="hint-text">提示：密码是四个相同的数字</span>
+                        </div>
+                    </div>
+                    
+                    <div class="password-display">
+                        <div class="digit-box" data-digit="1">•</div>
+                        <div class="digit-box" data-digit="2">•</div>
+                        <div class="digit-box" data-digit="3">•</div>
+                        <div class="digit-box" data-digit="4">•</div>
+                    </div>
+                    
+                    <div class="number-pad">
+                        <div class="number-row">
+                            <button type="button" class="number-btn" data-number="1">1</button>
+                            <button type="button" class="number-btn" data-number="2">2</button>
+                            <button type="button" class="number-btn" data-number="3">3</button>
+                        </div>
+                        <div class="number-row">
+                            <button type="button" class="number-btn" data-number="4">4</button>
+                            <button type="button" class="number-btn" data-number="5">5</button>
+                            <button type="button" class="number-btn" data-number="6">6</button>
+                        </div>
+                        <div class="number-row">
+                            <button type="button" class="number-btn" data-number="7">7</button>
+                            <button type="button" class="number-btn" data-number="8">8</button>
+                            <button type="button" class="number-btn" data-number="9">9</button>
+                        </div>
+                        <div class="number-row">
+                            <button type="button" class="number-btn clear-btn"><i class="fas fa-backspace"></i></button>
+                            <button type="button" class="number-btn" data-number="0">0</button>
+                            <button type="button" class="number-btn submit-btn"><i class="fas fa-paper-plane"></i></button>
+                        </div>
+                    </div>
+                    
+                    <div class="form-footer">
+                        <button type="submit" class="login-btn">
+                            <i class="fas fa-door-open"></i> 进入玄机阁
+                        </button>
+                        <div class="error-message" id="errorMessage"></div>
+                    </div>
+                </form>
+            </div>
+            
+            <div class="card-footer">
+                <div class="fortune-quote">
+                    <i class="fas fa-quote-left"></i>
+                    <p>命运如同星空，看似随机却自有其轨迹</p>
+                    <i class="fas fa-quote-right"></i>
+                </div>
+                <div class="security-notice">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>本阁仅供有缘人进入，请勿泄露密码</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="login-footer">
+            <div class="mystical-elements">
+                <div class="element">
+                    <i class="fas fa-moon"></i>
+                    <span>太阴</span>
+                </div>
+                <div class="element">
+                    <i class="fas fa-sun"></i>
+                    <span>太阳</span>
+                </div>
+                <div class="element">
+                    <i class="fas fa-star"></i>
+                    <span>星辰</span>
+                </div>
+                <div class="element">
+                    <i class="fas fa-mountain"></i>
+                    <span>山岳</span>
+                </div>
+                <div class="element">
+                    <i class="fas fa-water"></i>
+                    <span>江河</span>
+                </div>
+            </div>
+            <p class="copyright">© 2026 玄机阁 · 天机不可泄露</p>
+        </div>
+    </div>
+    
+    <div class="background-animation">
+        <div class="yin-yang"></div>
+        <div class="taiji"></div>
+        <div class="lotus"></div>
+        <div class="bamboo"></div>
+    </div>
+    
+    <script src="js/login.js"></script>
+</body>
+</html>

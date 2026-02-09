@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>玄机阁 - 命运占卜</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/fortune.css">
+    <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="fortune-container">
+        <!-- 导航栏 -->
+        <nav class="fortune-nav">
+            <div class="nav-logo">
+                <i class="fas fa-yin-yang"></i>
+                <h1>玄机阁</h1>
+            </div>
+            <div class="nav-menu">
+                <a href="#destiny" class="nav-link active"><i class="fas fa-star-and-crescent"></i> 命运占卜</a>
+                <a href="#zodiac" class="nav-link"><i class="fas fa-dragon"></i> 生肖运势</a>
+                <a href="#tarot" class="nav-link"><i class="fas fa-cards"></i> 塔罗牌阵</a>
+                <a href="#numerology" class="nav-link"><i class="fas fa-calculator"></i> 数字命理</a>
+                <a href="#about" class="nav-link"><i class="fas fa-info-circle"></i> 关于玄机</a>
+            </div>
+            <div class="nav-user">
+                <div class="user-info">
+                    <i class="fas fa-user-circle"></i>
+                    <span>有缘人</span>
+                </div>
+                <button class="logout-btn" id="logoutBtn">
+                    <i class="fas fa-sign-out-alt"></i> 退出
+                </button>
+            </div>
+        </nav>
+
+        <!-- 主内容区 -->
+        <main class="fortune-main">
+            <!-- 命运占卜部分 -->
+            <section id="destiny" class="fortune-section active">
+                <div class="section-header">
+                    <h2><i class="fas fa-crystal-ball"></i> 命运占卜</h2>
+                    <p>窥探未来三个月运势走向</p>
+                </div>
+                
+                <div class="destiny-container">
+                    <div class="destiny-left">
+                        <div class="user-input-card">
+                            <h3><i class="fas fa-user-edit"></i> 请输入您的信息</h3>
+                            <form id="destinyForm">
+                                <div class="form-group">
+                                    <label for="birthDate"><i class="fas fa-birthday-cake"></i> 出生日期</label>
+                                    <input type="date" id="birthDate" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="birthTime"><i class="fas fa-clock"></i> 出生时辰（可选）</label>
+                                    <select id="birthTime">
+                                        <option value="">请选择时辰</option>
+                                        <option value="zi">子时 (23:00-01:00)</option>
+                                        <option value="chou">丑时 (01:00-03:00)</option>
+                                        <option value="yin">寅时 (03:00-05:00)</option>
+                                        <option value="mao">卯时 (05:00-07:00)</option>
+                                        <option value="chen">辰时 (07:00-09:00)</option>
+                                        <option value="si">巳时 (09:00-11:00)</option>
+                                        <option value="wu">午时 (11:00-13:00)</option>
+                                        <option value="wei">未时 (13:00-15:00)</option>
+                                        <option value="shen">申时 (15:00-17:00)</option>
+                                        <option value="you">酉时 (17:00-19:00)</option>
+                                        <option value="xu">戌时 (19:00-21:00)</option>
+                                        <option value="hai">亥时 (21:00-23:00)</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label><i class="fas fa-venus-mars"></i> 性别</label>
+                                    <div class="gender-options">
+                                        <label class="gender-option">
+                                            <input type="radio" name="gender" value="male" checked>
+                                            <span class="gender-icon"><i class="fas fa-mars"></i></span>
+                                            <span>男性</span>
+                                        </label>
+                                        <label class="gender-option">
+                                            <input type="radio" name="gender" value="female">
+                                            <span class="gender-icon"><i class="fas fa-venus"></i></span>
+                                            <span>女性</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="question"><i class="fas fa-question-circle"></i> 您想询问什么？</label>
+                                    <textarea id="question" placeholder="请输入您关心的问题，如事业、感情、健康等..." rows="3"></textarea>
+                                </div>
+                                
+                                <button type="submit" class="fortune-btn">
+                                    <i class="fas fa-magic"></i> 开始占卜
+                                </button>
+                            </form>
+                        </div>
+                        
+                        <div class="fortune-history">
+                            <h4><i class="fas fa-history"></i> 近期占卜记录</h4>
+                            <div class="history-list">
+                                <div class="history-item">
+                                    <div class="history-date">02月08日</div>
+                                    <div class="history-type">事业运势</div>
+                                    <div class="history-result positive">吉</div>
+                                </div>
+                                <div class="history-item">
+                                    <div class="history-date">02月05日</div>
+                                    <div class="history-type">感情运势</div>
+                                    <div class="history-result neutral">平</div>
+                                </div>
+                                <div class="history-item">
+                                    <div class="history-date">02月01日</div>
+                                    <div class="history-type">健康运势</div>
+                                    <div class="history-result positive">吉</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="destiny-right">
+                        <div class="fortune-result-card" id="fortuneResult">
+                            <div class="result-placeholder">
+                                <div class="placeholder-icon">
+                                    <i class="fas fa-crystal-ball"></i>
+                                </div>
+                                <h3>等待占卜结果</h3>
+                                <p>请输入您的信息并点击"开始占卜"按钮</p>
+                                <p class="placeholder-tip">天机将在此显现...</p>
+                            </div>
+                        </div>
+                        
+                        <div class="fortune-details">
+                            <div class="detail-card">
+                                <h4><i class="fas fa-briefcase"></i> 事业运势</h4>
+                                <div class="detail-content">
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 75%"></div>
+                                    </div>
+                                    <p class="detail-text">工作中将遇到贵人相助，项目进展顺利</p>
+                                </div>
+                            </div>
+                            
+                            <div class="detail-card">
+                                <h4><i class="fas fa-heart"></i> 感情运势</h4>
+                                <div class="detail-content">
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 60%"></div>
+                                    </div>
+                                    <p class="detail-text">感情平稳发展，需多沟通增进理解</p>
+                                </div>
+                            </div>
+                            
+                            <div class="detail-card">
+                                <h4><i class="fas fa-heartbeat"></i> 健康运势</h4>
+                                <div class="detail-content">
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 85%"></div>
+                                    </div>
+                                    <p class="detail-text">身体状况良好，注意作息规律</p>
+                                </div>
+                            </div>
+                            
+                            <div class="detail-card">
+                                <h4><i class="fas fa-money-bill-wave"></i> 财运运势</h4>
+                                <div class="detail-content">
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 70%"></div>
+                                    </div>
+                                    <p class="detail-text">正财稳定，偏财有机会但需谨慎</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 生肖运势部分 -->
+            <section id="zodiac" class="fortune-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-dragon"></i> 生肖运势</h2>
+                    <p>2026年十二生肖运势详解</p>
+                </div>
+                
+                <div class="zodiac-container">
+                    <div class="zodiac-selector">
+                        <h3>选择您的生肖</h3>
+                        <div class="zodiac-grid">
+                            <!-- 生肖选项将通过JS动态生成 -->
+                        </div>
+                    </div>
+                    
+                    <div class="zodiac-result">
+                        <div class="zodiac-result-placeholder">
+                            <div class="placeholder-icon">
+                                <i class="fas fa-dragon"></i>
+                            </div>
+                            <h3>选择生肖查看运势</h3>
+                            <p>点击左侧生肖图标查看详细运势分析</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 其他部分省略，实际文件中会有完整内容 -->
+            
+        </main>
+
+        <!-- 页脚 -->
+        <footer class="fortune-footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4><i class="fas fa-info-circle"></i> 免责声明</h4>
+                    <p>本网站内容仅供娱乐参考，命运掌握在自己手中。</p>
+                </div>
+                <div class="footer-section">
+                    <h4><i class="fas fa-shield-alt"></i> 隐私保护</h4>
+                    <p>您的个人信息将严格保密，不会用于其他用途。</p>
+                </div>
+                <div class="footer-section">
+                    <h4><i class="fas fa-envelope"></i> 联系我们</h4>
+                    <p>如有疑问请联系：mystic@xuange.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 玄机阁 · 探索命运之谜 · 版本 2.0</p>
+                <div class="footer-links">
+                    <a href="#"><i class="fab fa-weixin"></i> 微信</a>
+                    <a href="#"><i class="fab fa-weibo"></i> 微博</a>
+                    <a href="#"><i class="fab fa-qq"></i> QQ</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- 背景动画 -->
+    <div class="fortune-background">
+        <div class="floating-symbols">
+            <div class="symbol">☯</div>
+            <div class="symbol">☸</div>
+            <div class="symbol">✡</div>
+            <div class="symbol">☪</div>
+            <div class="symbol">🕉</div>
+        </div>
+        <div class="constellation"></div>
+    </div>
+
+    <script src="js/fortune.js"></script>
+</body>
+</html>
