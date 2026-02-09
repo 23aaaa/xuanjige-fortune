@@ -650,4 +650,41 @@
     .zodiac-grid {
         grid-template-columns: repeat(2, 1fr);
     }
+    
+    .date-input-group {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .date-select {
+        width: 100%;
+    }
+}
+
+/* 自定义日期选择器 */
+.date-input-group {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.date-select {
+    flex: 1;
+    padding: 0.8rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--light-color);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: border-color 0.3s;
+}
+
+.date-select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.date-select option {
+    background: var(--dark-color);
+    color: var(--light-color);
 }
