@@ -33,7 +33,56 @@
                     <i class="fas fa-sign-out-alt"></i> 退出
                 </button>
             </div>
+            <!-- 汉堡菜单按钮（移动端显示） -->
+            <div class="hamburger-container">
+                <button class="hamburger-menu" id="hamburgerBtn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
         </nav>
+        
+        <!-- 移动端菜单 -->
+        <div class="mobile-menu" id="mobileMenu">
+            <div class="mobile-menu-header">
+                <h2>玄机阁</h2>
+                <button class="close-menu" id="closeMenuBtn">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="mobile-nav-links">
+                <a href="#destiny" class="mobile-nav-link active" data-section="destiny">
+                    <i class="fas fa-star-and-crescent"></i>
+                    <span>命运占卜</span>
+                </a>
+                <a href="#zodiac" class="mobile-nav-link" data-section="zodiac">
+                    <i class="fas fa-dragon"></i>
+                    <span>生肖运势</span>
+                </a>
+                <a href="#tarot" class="mobile-nav-link" data-section="tarot">
+                    <i class="fas fa-cards"></i>
+                    <span>塔罗牌阵</span>
+                </a>
+                <a href="#numerology" class="mobile-nav-link" data-section="numerology">
+                    <i class="fas fa-calculator"></i>
+                    <span>数字命理</span>
+                </a>
+                <a href="#about" class="mobile-nav-link" data-section="about">
+                    <i class="fas fa-info-circle"></i>
+                    <span>关于玄机</span>
+                </a>
+            </div>
+            <div class="mobile-user-info">
+                <div class="mobile-user">
+                    <i class="fas fa-user-circle"></i>
+                    <span>有缘人</span>
+                </div>
+                <button class="mobile-logout-btn" id="mobileLogoutBtn">
+                    <i class="fas fa-sign-out-alt"></i> 退出登录
+                </button>
+            </div>
+        </div>
 
         <!-- 主内容区 -->
         <main class="fortune-main">

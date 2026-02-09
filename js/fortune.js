@@ -6,6 +6,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // 初始化导航
     initNavigation();
     
+    // 初始化移动端菜单
+    initMobileMenu();
+    
     // 初始化表单
     initForms();
     
@@ -247,6 +250,83 @@ function hideLoading() {
     if (loadingEl && loadingEl.parentNode) {
         loadingEl.parentNode.removeChild(loadingEl);
     }
+}
+
+// 初始化移动端菜单
+function initMobileMenu() {
+    const hamburgerBtn = document.getElementById('hamburgerBtn');
+    const closeMenuBtn = document.getElementById('closeMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+    const mobileLogoutBtn = document.getElementById('mobileLogoutBtn');
+    
+    // 汉堡菜单点击
+    if (hamburgerBtn) {
+        hamburgerBtn.addEventListener('click', function() {
+            mobileMenu.classList.add('active');
+            document.body.style.overflow = 'hidden'; // 防止背景滚动
+        });
+    }
+    
+    // 关闭菜单
+    if (closeMenuBtn) {
+        closeMenuBtn.addEventListener('click', function() {
+            mobileMenu.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+    }
+    
+    // 移动端导航链接点击
+    mobileNavLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // 移除所有active类
+            mobileNavLinks.forEach(l => l.classList.remove('active'));
+            document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+            document.querySelectorAll('.fortune-section').forEach(s => s.classList.remove('active'));
+            
+            // 添加active类到当前链接
+            this.classList.add('active');
+            
+            // 更新桌面导航
+            const section = this.getAttribute('data-section');
+            const desktopLink = document.querySelector(`.nav-link[href="#${section}"]`);
+            if (desktopLink) {
+                desktopLink.classList.add('active');
+            }
+            
+            // 显示对应部分
+            const targetSection = document.getElementById(section);
+            if (targetSection) {
+                targetSection.classList.add('active');
+                
+                // 滚动到对应部分
+                targetSection.scrollIntoView({ behavior: 'smooth' });
+            }
+            
+            // 关闭菜单
+            mobileMenu.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+    });
+    
+    // 移动端退出按钮
+    if (mobileLogoutBtn) {
+        mobileLogoutBtn.addEventListener('click', function() {
+            if (confirm('确定要退出玄机阁吗？')) {
+                window.location.href = 'index.html';
+            }
+        });
+    }
+    
+    // 点击菜单外部关闭
+    mobileMenu.addEventListener('click', function(e) {
+        if (e.target === mobileMenu) {
+            mobileMenu.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    });
 }
 
 // 初始化退出按钮
